@@ -65,13 +65,13 @@ public class IndividuoDAO {
                 if (id == key) {
                     resultado.setCpf(rs.getInt("cpf"));
                     resultado.setRg(rs.getInt("rg"));
-                    resultado.setNome(rs.getString("nome"));
-                    resultado.setCelular(rs.getInt("celular"));
-                    resultado.setEmail(rs.getString("email"));
-                    resultado.setNumeroDoEndereco(rs.getInt("numero"));
-                    resultado.setComplemento(rs.getString("complemento"));
-                    resultado.setIdade(rs.getInt("idade"));
-                    resultado.setCep(rs.getInt("cep"));
+                    resultado.setNome(rs.getString("Nome"));
+                    resultado.setCelular(rs.getInt("CelularTelefone"));
+                    resultado.setEmail(rs.getString("Email"));
+                    resultado.setNumeroDoEndereco(rs.getInt("Numero"));
+                    resultado.setComplemento(rs.getString("Complemento"));
+                    resultado.setIdade(rs.getInt("Idade"));
+                    resultado.setCep(rs.getInt("Cep"));
                     idItem = rs.getInt("itenID");
                 }
             }
@@ -115,7 +115,7 @@ public class IndividuoDAO {
         ArrayList<Individuo> lista = new ArrayList<>();
         try {
             Statement smtm = con.createStatement();
-            ResultSet rs = smtm.executeQuery("select individuo.* , itens.para_Doar from individuo inner join itens on itens.id_itens = individuo.itenID");
+            ResultSet rs = smtm.executeQuery("select individuo.* , itens.doar from individuo inner join itens on itens.idItens = individuo.itenID");
             while (rs.next()) {
                 if (rs.getInt("para_Doar") == 1) {
                     Individuo resultado = new Individuo(rs.getInt("cpf"),
@@ -141,7 +141,7 @@ public class IndividuoDAO {
         ArrayList<Individuo> lista = new ArrayList<>();
         try {
             Statement smtm = con.createStatement();
-            ResultSet rs = smtm.executeQuery("select individuo.* , itens.para_Doar from individuo inner join itens on itens.id_itens = individuo.itenID");
+            ResultSet rs = smtm.executeQuery("select individuo.* , itens.doar from individuo inner join itens on itens.idItens = individuo.itenID");
             while (rs.next()) {
                 if (rs.getInt("para_Doar") == 0) {
                     Individuo resultado = new Individuo(rs.getInt("cpf"),

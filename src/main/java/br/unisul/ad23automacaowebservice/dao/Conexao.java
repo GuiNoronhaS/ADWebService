@@ -19,7 +19,7 @@ public class Conexao {
     String dbdriver = "com.mysql.cj.jdbc.Driver";
     String dburl = "jdbc:mysql://localhost:3306/webserviceautomacao?useSSL=false&useTimezone=true&serverTimezone=UTC";
     String dbusuario = "root";
-    String dbsenha = "root";
+    String dbsenha = "root45Topico55";
     Connection con;
     Statement stmt;
 

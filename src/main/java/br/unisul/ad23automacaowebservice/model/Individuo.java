@@ -30,7 +30,7 @@ public class Individuo {
         itens = new Itens();
     }
 
-    public Individuo(int rg, int cpf, String nome, int idade, int celular, String email, int cep, int numeroDoEndereco, String complemento, Itens itens) {
+    public Individuo(int cpf, int rg, String nome, int celular, String email, int numeroDoEndereco, String complemento,int idade,int cep, Itens itens) {
         this.rg = rg;
         this.cpf = cpf;
         this.nome = nome;
